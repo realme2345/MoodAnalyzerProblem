@@ -11,7 +11,7 @@ namespace MoodAnalyzerPracticeProblem
     public class MoodAnlyzer 
     {
         public string message;
-        public MoodAnlyzer(string message) //Creating a constructer
+        public MoodAnlyzer(string message) //Creating a parametarised constructer 
         {
             this.message = message;
         }
