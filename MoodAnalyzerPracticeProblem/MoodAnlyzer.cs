@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MoodAnalyzerPracticeProblem
-{
-    public class MoodAnlyzer
+{/// <summary>
+/// Mood analyser
+/// </summary>
+    public class MoodAnlyzer 
     {
         public string message;
-        public MoodAnlyzer(string message)
+        public MoodAnlyzer(string message) //Creating a constructer
         {
             this.message = message;
         }
-        public string AnalyseMood()
+        public string AnalyseMood()//this mothod is used for to analyse mood of user by using Exception
         {
             try
             {
@@ -21,7 +23,7 @@ namespace MoodAnalyzerPracticeProblem
                 {
                     return "happy";
                 }
-                else if (message.Equals(string.Empty))
+                else if (message.Equals(string.Empty)) //Custom Exception for user understanding message
                 {
                     throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.EMPTY_EXCEPTION, "Message Should not be null");
 
@@ -31,7 +33,7 @@ namespace MoodAnalyzerPracticeProblem
                     return "sad";
                 }
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException ex) //if  null Exception is occured the block of ststement executed
             {
                 Console.WriteLine(ex.Message);
                 // return "happy";
