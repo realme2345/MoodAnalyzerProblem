@@ -80,7 +80,31 @@ namespace TestingMoodAnalyser
                     ///Assert
                     Assert.AreEqual(expected, ex.Message);
                 }
+            }
+            [TestMethod]
+            [TestCategory("Empty Exception")]
+            public void GivenNullMessageReturnsEmptyException()
+            {
+                string message = " ";
+                string expected = "Message Should not be empty";
+                try
+                {
+                    ///Arrange
 
+
+                    MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
+
+                    ///Act
+                    string actual = moodanalyzer.AnalyseMood();
+
+
+                }
+                catch (MoodAnalyserExcep ex)
+                {
+                    ///Assert
+                    Console.WriteLine("Custom:" + ex);
+                    Assert.AreEqual(expected, ex.Message);
+                }
             }
         }
     }

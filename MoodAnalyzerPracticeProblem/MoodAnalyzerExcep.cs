@@ -9,7 +9,7 @@ namespace MoodAnalyzerPracticeProblem
     class MoodAnalyzerExcep:Exception //Creting custom Exception for user understanding
     {
         public ExceptionType type;
-        public enum ExceptionType //declaring the Exception
+        public enum ExceptionType //declaring the Exception by using the Enum
         {
             NULL_EXCEPTION,
             EMPTY_EXCEPTION
