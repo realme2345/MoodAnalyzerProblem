@@ -37,7 +37,7 @@ namespace TestingMoodAnalyser
         }
         [TestMethod]
         [TestCategory("Null Mood")]
-        public void GivenNullMessageReturnsHappyMood()
+        public void GivenNullMessageReturnsHappyMood()//this method for user in null mood return Happy
         {
             ///Arrange
             string message = null;

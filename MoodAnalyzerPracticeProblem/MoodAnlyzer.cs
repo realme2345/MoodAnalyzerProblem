@@ -33,7 +33,7 @@ namespace MoodAnalyzerPracticeProblem
                     return "sad";
                 }
             }
-            catch (NullReferenceException ex) //if  null Exception is occured the block of ststement executed
+            catch (NullReferenceException ex) //if  null Exception is occured the block of ststement executed and return Happy
             {
                 Console.WriteLine(ex.Message);
                 return "happy";
