@@ -36,7 +36,7 @@ namespace MoodAnalyzerPracticeProblem
             catch (NullReferenceException ex) //if  null Exception is occured the block of ststement executed
             {
                 Console.WriteLine(ex.Message);
-                // return "happy";
+                 return "happy";
                 throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NULL_EXCEPTION, "Message Should not be null");
             }
         }
