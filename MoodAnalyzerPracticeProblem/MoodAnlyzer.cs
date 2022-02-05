@@ -39,6 +39,8 @@ namespace MoodAnalyzerPracticeProblem
                 return "happy";
                 throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NULL_EXCEPTION, "Message Should not be null");
             }
+           
         }
+        
     }
 }

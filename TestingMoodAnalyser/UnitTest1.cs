@@ -7,48 +7,81 @@ namespace TestingMoodAnalyser
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethodHappy()
+        [TestClass]
+        public class TestingAnalyzer
         {
-            ///Arrange
-            string message = "I am in happy mood";
-            string expected = "happy";
-            MoodAnlyzer moodanalyzer = new MoodAnlyzer(message); //creating a object for a class
-            ///Act
-            string actual = moodanalyzer.AnalyseMood();//hear we check the mood of user is happy or sad
-            ///Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        [TestCategory("Sad Mood")]
-        public void GivenSadMessageReturnsSadMood() //this method for user has a Sad mood
-        {
-            ///Arrange
-            string message = "I am in sad mood";
-            string expected = "sad";
-            MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
+            [TestMethod]
+            [TestCategory("Happy Mood")]
+            public void TestMethodHappy()
+            {
+                ///Arrange
+                string message = "I am in HAPPY mood";
+                string expected = "happy";
+                MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
 
-            ///Act
-            string actual = moodanalyzer.AnalyseMood();
+                ///Act
+                string actual = moodanalyzer.AnalyseMood();
 
-            ///Assert
-            Assert.AreEqual(expected, actual);
+                ///Assert
+                Assert.AreEqual(expected, actual);
+            }
 
-        }
-        [TestMethod]
-        [TestCategory("Null Mood")]
-        public void GivenNullMessageReturnsHappyMood()//this method for user in null mood return Happy
-        {
-            ///Arrange
-            string message = null;
-            string expected = "happy";
-            MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
 
-            ///Act
-            string actual = moodanalyzer.AnalyseMood();
+            [TestMethod]
+            [TestCategory("Sad Mood")]
+            public void GivenSadMessageReturnsSadMood()
+            {
+                ///Arrange
+                string message = "I am in sad mood";
+                string expected = "sad";
+                MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
 
-            ///Assert
-            Assert.AreEqual(expected, actual);
+                ///Act
+                string actual = moodanalyzer.AnalyseMood();
+
+                ///Assert
+                Assert.AreEqual(expected, actual);
+            }
+            [TestMethod]
+            [TestCategory("Null Mood")]
+            public void GivenNullMessageReturnsHappyMood()
+            {
+                ///Arrange
+                string message = null;
+                string expected = "happy";
+                MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
+
+                ///Act
+                string actual = moodanalyzer.AnalyseMood();
+
+                ///Assert
+                Assert.AreEqual(expected, actual);
+            }
+            [TestMethod]
+            [TestCategory("Custom Exception")]
+            public void GivenNullMessageReturnsCustomException()
+            {
+                string message = null;
+                string expected = "Message Should not be null";
+                try
+                {
+                    ///Arrange
+
+
+                    MoodAnlyzer moodanalyzer = new MoodAnlyzer(message);
+
+                    ///Act
+                    string actual = moodanalyzer.AnalyseMood();
+
+
+                }
+                catch (MoodAnalyserExcep ex)
+                {
+                    ///Assert
+                    Assert.AreEqual(expected, ex.Message);
+                }
+
+            }
         }
     }
 }
